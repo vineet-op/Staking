@@ -25,9 +25,9 @@ contract Orca is Test {
     }
 
     function testUnstake() public {
-        staking.stake{value: 1 ether}();
-        staking.unstake(0.5 ether);
-        assert(staking.balancesOf(address(this)) == 0.5 ether);
+        staking.stake{value: 200}();
+        staking.unstake(100);
+        assert(staking.balancesOf(address(this)) == 100);
     }
 
     function test_RevertIf_MintFails() public {
